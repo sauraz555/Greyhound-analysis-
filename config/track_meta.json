@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Sandown Park",
+    "state": "VIC",
+    "distances": [515, 595, 715],
+    "surface": "Sand",
+    "turn_radius": "Wide",
+    "name_aliases": ["Sandown", "Sandown (SAP)", "SAP"]
+  },
+  {
+    "name": "The Meadows",
+    "state": "VIC",
+    "distances": [525, 600, 730],
+    "surface": "Sand",
+    "turn_radius": "Wide",
+    "name_aliases": ["Meadows", "MEP", "MEA"]
+  },
+  {
+    "name": "Wentworth Park",
+    "state": "NSW",
+    "distances": [280, 520, 720],
+    "surface": "Sand",
+    "turn_radius": "Medium",
+    "name_aliases": ["WPK", "Wentworth Pk"]
+  },
+  {
+    "name": "Albion Park",
+    "state": "QLD",
+    "distances": [331, 395, 520, 600, 710],
+    "surface": "Sand",
+    "turn_radius": "Medium",
+    "name_aliases": ["Albion Pk", "ALB"]
+  },
+  {
+    "name": "Angle Park",
+    "state": "SA",
+    "distances": [342, 530, 595, 730],
+    "surface": "Sand",
+    "turn_radius": "Medium",
+    "name_aliases": ["Angle Pk", "ANG"]
+  },
+  {
+    "name": "Cannington",
+    "state": "WA",
+    "distances": [275, 380, 520, 600, 715],
+    "surface": "Sand",
+    "turn_radius": "Medium",
+    "name_aliases": ["CAN"]
+  },
+  {
+    "name": "Richmond",
+    "state": "NSW",
+    "distances": [320, 401, 520, 622, 722],
+    "surface": "Grass/Sand",
+    "turn_radius": "Medium",
+    "name_aliases": ["RIC", "Richmond (NSW)"]
+  },
+  {
+    "name": "Dapto",
+    "state": "NSW",
+    "distances": [297, 520, 600, 729],
+    "surface": "Sand",
+    "turn_radius": "Tight",
+    "name_aliases": ["DAP"]
+  },
+  {
+    "name": "Geelong",
+    "state": "VIC",
+    "distances": [400, 460, 520, 596, 680],
+    "surface": "Sand",
+    "turn_radius": "Wide",
+    "name_aliases": ["GEL"]
+  },
+  {
+    "name": "Ballarat",
+    "state": "VIC",
+    "distances": [390, 450, 545, 660],
+    "surface": "Sand",
+    "turn_radius": "Wide",
+    "name_aliases": ["BAL"]
+  },
+  {
+    "name": "Bendigo",
+    "state": "VIC",
+    "distances": [425, 500, 660],
+    "surface": "Sand",
+    "turn_radius": "Wide",
+    "name_aliases": ["BEN"]
+  },
+  {
+    "name": "Hobart",
+    "state": "TAS",
+    "distances": [340, 461, 599],
+    "surface": "Sand",
+    "turn_radius": "Medium",
+    "name_aliases": ["HOB"]
+  }
+]

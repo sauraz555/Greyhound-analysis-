@@ -1,0 +1,42 @@
+# Greyhound Edge Engine v3.2 configuration
+
+# Recency weighting (last 5 runs)
+recency_weights: [0.42, 0.28, 0.15, 0.10, 0.05]
+
+# Scenario weights (Scenario A = mainline, Scenario B = jam/sweep upset)
+scenario_a_weight: 0.75     # range 0.70-0.80
+scenario_b_weight: 0.25     # range 0.20-0.30
+
+# Speed conversion
+sec_per_length: 0.07        # range 0.06-0.08
+
+# False favourite filter
+# Short priced dogs MUST have high start reliability and low pressure
+false_fav:
+  short_price: 2.80
+  implied_win: 0.35
+  min_sr: 8
+  max_pi: 4
+  haircut: [0.10, 0.20]     # How much relative probability to strip and redistribute
+
+# Minimum edges to bet (after overround)
+min_edge:
+  win: 0.12
+  place: 0.08
+  top4: 0.06
+
+# Staking strategy
+staking:
+  kelly_fraction: 0.25
+  max_single_pct: 0.02
+  max_race_exposure_pct: 0.035
+
+# Freshness decay (penalize if days since last run > threshold, unless proven fresh)
+freshness_decay_days: 14
+
+# Feature scales used by the LLM
+feature_scale: "0-10"
+
+# Pressure Index base penalties
+# Boxes 3, 4, 5, 6 get penalized unless a neighbor is a slow beginner or vacant
+pi_squeeze_boxes: [3, 4, 5, 6]

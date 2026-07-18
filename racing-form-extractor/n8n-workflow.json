@@ -1,0 +1,90 @@
+{
+  "name": "Racing Form Extractor - Auto Process",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "cron-trigger",
+      "name": "Every 15 Minutes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-400, 0]
+    },
+    {
+      "parameters": {
+        "command": "=cd /opt/racing-form-extractor && python3 scripts/process_folder.py input output 2>&1"
+      },
+      "id": "run-processor",
+      "name": "Run process_folder.py",
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [-160, 0],
+      "notes": "Update the path (/opt/racing-form-extractor) to wherever you unzipped the package on this server. Exit code 1 means at least one PDF failed and was moved to input/failed/ - check the stdout output captured here."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose"
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.stdout }}",
+              "rightValue": "INCOMPLETE",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "check-incomplete",
+      "name": "Any file flagged INCOMPLETE?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [120, 0],
+      "notes": "Wire the true branch to whatever notification method you use (email, Slack, ntfy, etc.) - not included here since that depends on what you have configured. The false branch can just end (files processed cleanly)."
+    }
+  ],
+  "connections": {
+    "Every 15 Minutes": {
+      "main": [
+        [
+          {
+            "node": "Run process_folder.py",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run process_folder.py": {
+      "main": [
+        [
+          {
+            "node": "Any file flagged INCOMPLETE?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

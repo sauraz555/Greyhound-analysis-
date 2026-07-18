@@ -1,0 +1,5 @@
+# List Racing And Sports meeting URLs here, one per line.
+# Lines starting with # are ignored.
+
+# Example:
+# https://www.racingandsports.com.au/form-guide/greyhounds/australia/sandown-park/2026-07-20
