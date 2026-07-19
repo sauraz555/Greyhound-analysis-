@@ -40,3 +40,13 @@ feature_scale: "0-10"
 # Pressure Index base penalties
 # Boxes 3, 4, 5, 6 get penalized unless a neighbor is a slow beginner or vacant
 pi_squeeze_boxes: [3, 4, 5, 6]
+
+# Trainer Edge (TE) - Tie Breaker Only
+trainer_edge:
+  elite_strike_rate_threshold: 0.20 # 20% win rate
+  te_bonus_max: 0.5 # Max points added to Ability Score (kept small as it is a tie-breaker)
+
+# Track Bias and Experience
+track_bias:
+  significant_bias_threshold: 0.15 # 15% win rate for a specific box
+  track_inexperience_penalty: 1.0 # Points deducted for 0 starts at track

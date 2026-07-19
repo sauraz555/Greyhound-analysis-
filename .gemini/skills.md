@@ -17,11 +17,11 @@ This registry defines the 9 composable analytical skills required for greyhound 
 **Output**: Section A Parse + Data Integrity Check.
 
 ## 3. speed_profiler
-**Description**: Builds recency-weighted speed profiles per dog.
+**Description**: Builds recency-weighted speed profiles per dog, including trainer and track experience metrics.
 **Trigger Conditions**: Follows integrity_checker.
 **Inputs**: Validated runner past runs.
-**Process**: Calculate Speed Figure (SF), Ability Score (AS), Early Speed Rating (ESR), and Mid/Finish Rating (MFR). Apply recency weights: w1=0.42, w2=0.28, w3=0.15, w4=0.10, w5=0.05. Scale 0-10.
-**Output**: Quantitative speed features per dog.
+**Process**: Calculate Speed Figure (SF), Ability Score (AS), Early Speed Rating (ESR), and Mid/Finish Rating (MFR). Apply recency weights: w1=0.42, w2=0.28, w3=0.15, w4=0.10, w5=0.05. Calculate Track Experience (TrE) penalties. Evaluate Trainer Edge (TE) to be used strictly as a tie-breaker. Scale 0-10.
+**Output**: Quantitative speed features per dog (including TE and TrE).
 
 ## 4. start_reliability
 **Description**: Computes start consistency and volatility.

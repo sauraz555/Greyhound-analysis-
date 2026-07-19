@@ -17,8 +17,10 @@ For each dog, calculate and display:
 - **SR (Start Reliability):** Consistency of begins + volatility penalty.
 - **SR Volatility:** Variance in ΔBON / ΔWinTime across last 3-5 runs.
 - **DNP (Distance Non-Native Penalty):** 0 (Proven), 1 (Some evidence), 2 (Unproven/Big shift).
+- **TrE (Track Experience):** Apply penalty for 0 career starts at the current track, especially on tight-turn tracks.
 - **Freshness decay:** >14d penalty unless explicit proven fresh performer.
 - **PI (Pressure Index):** Conflict pressure from adjacent + low-field/vacant cross adjustments.
+- **TE (Trainer Edge):** Evaluate overall/recent trainer strike rate or kennel form. Apply as a small positive adjustment. **IMPORTANT: TE is used strictly as a TIE-BREAKER between equally matched dogs.**
 
 **Formatting:**
 Create a clean table or structured list presenting these 9 metrics for every single runner. Ensure no runner is skipped.

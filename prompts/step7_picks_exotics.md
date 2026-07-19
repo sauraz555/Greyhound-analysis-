@@ -57,4 +57,5 @@ Provide a concise, easy-to-read summary:
 - False favourite risk (Yes/No) and why
 - Trifecta + First 4 combinations
 - Bets + stakes OR NO BET
+- Tie-Breaker Mention: Explicitly mention if Trainer Edge or Track Bias was used to separate closely matched runners.
 - Confidence + key uncertainty drivers
